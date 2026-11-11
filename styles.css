@@ -101,3 +101,9 @@
 .challenge-plain-figure{display:block!important;height:auto!important;max-height:none!important;overflow:visible!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .challenge-plain-figure img{display:block!important;width:auto!important;height:auto!important;max-width:100%!important;max-height:none!important;object-fit:unset!important;object-position:unset!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 .challenge-plain-impact{background:transparent!important;border-radius:0!important;box-shadow:none!important}
+
+/* Soft rounded image corners while preserving natural image dimensions */
+.challenge-plain-figure img{
+  border-radius:16px!important;
+  overflow:hidden;
+}
