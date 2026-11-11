@@ -1,0 +1,10 @@
+{
+  "name": "SURYA FARM — Smart Irrigation Network",
+  "short_name": "SURYA FARM",
+  "description": "Solar-first hybrid irrigation management prototype for Telangana farms.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f7f1",
+  "theme_color": "#123c2d",
+  "icons": []
+}
