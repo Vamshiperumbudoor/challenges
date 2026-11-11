@@ -1,0 +1,36 @@
+name: Deploy SURYA FARM to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "solar-farm/**"
+      - ".github/workflows/deploy-solar-farm.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: surya-farm-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Prepare static site
+        run: |
+          test -f solar-farm/index.html
+          mkdir -p public
+          cp -R solar-farm/. public/
+          touch public/.nojekyll
+      - name: Publish site to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          force_orphan: true
