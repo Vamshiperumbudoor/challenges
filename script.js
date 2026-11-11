@@ -31,14 +31,14 @@
     count.textContent = `Showing ${items.length} of 18 challenges`;
     grid.innerHTML = items.length ? items.map(c => `
       <article class="challenge-full" id="challenge-${escapeHTML(c.id)}">
-        <div class="challenge-full-hero">
-          <img src="${escapeHTML(c.image)}" alt="Challenge ${escapeHTML(c.id)}: ${escapeHTML(c.title)}" loading="lazy"
-               onerror="this.closest('.challenge-full-hero').classList.add('image-unavailable')">
-          <span class="challenge-full-number">CHALLENGE ${escapeHTML(c.id)}</span>
-        </div>
         <div class="challenge-full-body">
           <div class="challenge-full-department">${escapeHTML(c.departments)}</div>
           <h3>${escapeHTML(c.title)}</h3>
+          <div class="challenge-full-image">
+            <img src="${escapeHTML(c.image)}" alt="Challenge ${escapeHTML(c.id)}: ${escapeHTML(c.title)}" loading="lazy"
+                 onerror="this.closest('.challenge-full-image').classList.add('image-unavailable')">
+            <span class="challenge-full-number">CHALLENGE ${escapeHTML(c.id)}</span>
+          </div>
           <p class="challenge-full-summary">${escapeHTML(c.summary)}</p>
           <div class="challenge-full-impact"><strong>Impact</strong><p>${escapeHTML(c.impact)}</p></div>
           <div class="challenge-full-details">
